@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Primeiro Dia das Mães</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+      background-color: #dbeafe; /* Azul claro */
+    }
+    .slider {
+      display: flex;
+      width: 600%;
+      height: 100vh;
+      transition: transform 0.6s ease-in-out;
+    }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .slide h1, .slide h2 {
+      color: #1e3a8a;
+      text-align: center;
+    }
+    .slide p {
+      max-width: 700px;
+      color: #1e3a8a;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .controls {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+    .button {
+      padding: 12px 24px;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      font-size: 1.1em;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    video {
+      max-width: 90%;
+      border-radius: 12px;
+    }
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9em;
+      color: #1e3a8a;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider" id="slider">
+    <div class="slide">
+      <h1>Feliz Primeiro Dia das Mães</h1>
+      <p>Pour la plus belle maman du monde ❤️</p>
+    </div>
+
+    <div class="slide">
+      <h2>Uma Carta de Mim para Você</h2>
+      <p>Para a melhor mãe, eu declaro: a pessoa que mais me fez rir, mesmo com aquelas piadas sem graça que só você entende. Sua risada é a melodia que ilumina meus dias e seu amor é o abrigo onde sempre encontro conforto.
+
+        Mãe, você é a razão dos meus sorrisos e a força que me impulsiona a seguir em frente. Agradeço por cada momento, cada ensinamento e cada abraço apertado. Que a sua vida seja repleta de alegrias, assim como você enche a minha com tanto carinho.
+        
+        Te amo mais do que palavras podem expressa</p>
+    </div>
+
+    <div class="slide">
+      <h2>Mensagem de Edson,Igor e Jonatan</h2>
+      <p>Olá Mãe essa mensagem e do seu filho e seu marido:<br><br>
+      – Eu, <strong>Dinho</strong>, Minha neguinha Você é uma otima esposa e uma boa mãe continue sendo essa mulher incrivel.<br>
+      – Eu, <strong>Igor</strong>, De Todo meu coração eu te desejo um feliz dia das mães<br>
+      – E eu, <strong>Jonatan</strong>,Desejo tudo bom para rainha do meu palacio que você continue essa mulher incrivel e exemplo de mãe que vc é.<br><br>
+     </p>
+    </div>
+
+    <div class="slide">
+      <h2>Mensagem do para você</h2>
+      <p>Mãe, você é a luz que ilumina meus dias e o abraço que acalma meu coração. Neste Dia das Mães, quero te agradecer por cada sorriso, cada conselho e cada momento especial que compartilhamos. Você é a razão de tantas alegrias na minha vida! Que seu dia seja repleto de amor, carinho e todas as coisas que você mais ama. Eu Te amo mil milhões💕</p>
+    </div>
+
+    <div class="slide">
+      <h2>Seu presente especial</h2>
+      <button class="button" onclick="openGift()">Clique para abrir o presente 🎁</button>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="button" onclick="prevSlide()">⬅ Anterior</button>
+    <button class="button" onclick="nextSlide()">Próximo ➡</button>
+  </div>
+
+  <footer>
+    Feito para minha para uma pessoa especial!
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slider = document.getElementById('slider');
+    const totalSlides = slider.children.length;
+
+    function updateSlide() {
+      slider.style.transform = `translateX(-${currentSlide * 100}vw)`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    function openGift() {
+      alert("Escolha um produto!");
+      window.open("https://www.boticario.com.br/promocao/");
+    }
+  </script>
+</body>
+</html>
